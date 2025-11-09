@@ -338,3 +338,21 @@ LEP_RESULT UVC_RunCommand(LEP_CAMERA_PORT_DESC_T_PTR portDescPtr,
     return static_cast<LeptonVariation*>(portDescPtr->userPtr) ->
             UVC_RunCommand(commandID);
 }
+
+/* -------------------------------------- */
+/* -------- Additional functions -------- */
+/* -------------------------------------- */
+
+LEP_RESULT LeptonVariation::getSysAuxTemperatureCelcius( LEP_SYS_AUX_TEMPERATURE_CELCIUS_T_PTR auxTemperaturePtr )
+{
+  LEP_RESULT  result = LEP_OK;
+  result = LEP_GetSysAuxTemperatureCelcius(&m_portDesc, auxTemperaturePtr);
+  return result;
+}
+
+LEP_RESULT LeptonVariation::getSysAuxTemperatureKelvin( LEP_SYS_AUX_TEMPERATURE_KELVIN_T_PTR auxTemperaturePtr )
+{
+  LEP_RESULT  result = LEP_OK;
+  result = LEP_GetSysAuxTemperatureKelvin(&m_portDesc, auxTemperaturePtr);
+  return result;
+}
