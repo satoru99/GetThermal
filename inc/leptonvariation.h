@@ -124,7 +124,7 @@ public:
 
     virtual const QVideoSurfaceFormat getDefaultFormat();
 
-    LEP_RESULT getSysAuxTemperatureCelcius(LEP_SYS_AUX_TEMPERATURE_KELVIN_T_PTR auxTemperaturePtr);
+    LEP_RESULT getSysAuxTemperatureCelcius(LEP_SYS_AUX_TEMPERATURE_CELCIUS_T_PTR auxTemperaturePtr);
     LEP_RESULT getSysAuxTemperatureKelvin(LEP_SYS_AUX_TEMPERATURE_KELVIN_T_PTR auxTemperaturePtr);
 signals:
 
