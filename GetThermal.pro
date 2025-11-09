@@ -28,6 +28,7 @@ MacBuild: {
 
 SOURCES += \
     src/main.cpp \
+    src/python_wrapper.cpp \
     src/uvcvideoproducer.cpp \
     src/uvcacquisition.cpp \
     src/uvcbuffer.cpp \
@@ -60,6 +61,7 @@ RESOURCES += qml/qml.qrc
 QML_IMPORT_PATH =
 
 HEADERS += \
+    inc/python_wrapper.h \
     inc/uvcvideoproducer.h \
     inc/uvcbuffer.h \
     inc/uvcacquisition.h \
