@@ -17,13 +17,13 @@ void leptonvariation_performFfc(void* p) {
 }
 
 int leptonvariation_getauxtempC(void* p, float* auxTemperaturePtr) {
-  int result;
+  int result = 0;
   result = ((LeptonVariation*) p)->getSysAuxTemperatureCelcius(auxTemperaturePtr);
   return result;
 }
 
 int leptonvariation_getauxtempK(void* p, uint16_t* auxTemperaturePtr) {
-  int result;
+  int result = 0;
   result = ((LeptonVariation*) p)->getSysAuxTemperatureKelvin(auxTemperaturePtr);
   return result;
 }

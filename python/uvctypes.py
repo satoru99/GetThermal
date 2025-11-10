@@ -178,6 +178,13 @@ def set_extension_unit(devh, unit, control, data, size):
 PT_USB_VID = 0x1e4e
 PT_USB_PID = 0x0100
 
+PT_USB_SN_LIST = [
+    b'800f8003-5101-3133-3332-373300000000',
+    b'80128003-5101-3133-3332-373300000000',
+    b'000f001e-5101-3133-3332-373300000000',
+    b'0008001a-5103-3133-3332-373300000000',
+]
+
 AGC_UNIT_ID = 3
 OEM_UNIT_ID = 4
 RAD_UNIT_ID = 5
@@ -219,6 +226,12 @@ VS_FMT_GUID_RGB565 = create_string_buffer(
 )
 
 libuvc.uvc_get_format_descs.restype = POINTER(uvc_format_desc)
+libuvc.uvc_find_device.argtypes = [
+    POINTER(uvc_context),
+    POINTER(POINTER(uvc_device)),
+    c_int32,
+    c_int32,
+    c_char_p]
 
 def print_device_info(devh):
     vers = lep_oem_sw_version()
@@ -286,5 +299,5 @@ class LeptonVariation(object):
         libuvc.leptonvariation_getauxtempK.restype = c_int
         libuvc.leptonvariation_getauxtempK.argtypes = [c_void_p, POINTER(c_uint16)]
         auxTemperature = c_uint16()
-        result = libuvc.leptonvariation_getauxtempC(self.v, pointer(auxTemperature))
+        result = libuvc.leptonvariation_getauxtempK(self.v, pointer(auxTemperature))
         return auxTemperature.value

@@ -6,7 +6,8 @@ extern "C" {
 			       uvc_device_handle_t *devh);
   void leptonvariation_delete(void* p);
   void leptonvariation_performFfc(void* p);
-  int leptonvariation_getauxtempK(void* p, int* auxTemperaturePtr);
+  int leptonvariation_getauxtempK(void* p, uint16_t* auxTemperaturePtr);
+  int leptonvariation_getauxtempC(void* p, float* auxTemperaturePtr);
 #ifdef __cplusplus
 }
 #endif
